@@ -1,0 +1,92 @@
+
+Team 1
+S3 Bucket Management
+
+Policy Name: S3FullAccess
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Statement1",
+			"Principal": {},
+			"Effect": "Allow",
+			"Action": [
+				"s3:*"
+			],
+			"Resource": [
+				"arn:aws:s3:::git-collab/*"
+			]
+		}
+	]
+}
+
+
+Policy Name: S3ReadAccess
+"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Statement2",
+			"Principal": {},
+			"Effect": "Allow",
+			"Action": [
+				"s3:Get*",
+				"s3:List*"
+			],
+			"Resource": "arn:aws:s3:::git-collab/*"
+		}
+
+
+Policy Name: S3UploadDownload
+"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Statement3",
+			"Principal": "*",
+			"Effect": "Allow",
+			"Action": [
+				"s3:PutObject",
+				"s3:GetObject",
+				"s3:ListBucket"
+			],
+			"Resource": [
+				"arn:aws:s3:::git-collab/*"
+			]
+		}
+
+
+Policy Name: S3BucketTagging
+"Version": "2012-10-17",
+	"Statement": [
+               {
+			"Sid": "Statement4",
+			"Principal": {},
+			"Effect": "Allow",
+			"Action": [
+				"s3:PutBucketTagging",
+				"s3:GetBucketTagging"
+			],
+			"Resource": [
+				"arn:aws:s3:::git-collab"
+			]
+		}	
+
+
+Policy Name: S3BucketPolicy
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Statement5",
+			"Principal": {},
+			"Effect": "Allow",
+			"Action": [
+				"s3:PutBucketPolicy",
+				"s3:GetBucketPolicy",
+				"s3:DeleteBucketPolicy"
+			],
+			"Resource": [
+				"arn:aws:s3:::git-collab"
+			]
+		}
+	]
+}
